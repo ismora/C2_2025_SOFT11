@@ -1,0 +1,16 @@
+<!-- lista_tareas.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lista de Tareas</title>
+    </head>
+    <body>
+        <h1>Mis Tareas</h1>
+        <ul>
+            {% for tarea in tareas %}
+                <li>{{ tarea.titulo }} - {{ tarea.descripcion }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/agregar">Agregar tarea</a>
+    </body>
+</html>
