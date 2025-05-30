@@ -18,6 +18,11 @@ function calcularIMC() {
         let imc = peso / Math.pow(estatura, 2);
         parrafoResultado.innerText = imc.toFixed(2);
     } else {
+        Swal.fire({
+            icon: "warning",
+            title: "No se puede calcular el IMC",
+            text: "Por favor complete los campos resaltados."
+        });
     }
 }
 
