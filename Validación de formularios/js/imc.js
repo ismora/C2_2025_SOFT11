@@ -45,3 +45,15 @@ function validarCamposVacios() {
 }
 
 btnCalcularIMC.addEventListener("click", calcularIMC);
+
+//Ejercicio: Crear un formulario que permita ingresar el nombre,usuario, contraseña, verificación de la contraseña, fecha de nacimiento, género. Cuando el usuario se registrar se deben validar todos los campos y asegurar que la contraseña coincide con la verificación.   
+
+/*
+[new]: se ha creado un método o recurso en el programa que no existía antes del commit
+[improved]: se mejoró la forma en que se hacía un método o como se mostraba algo. No es un problema como tal.
+[fixed]: se corrigió un problema, algo que estaba mal.
+[updated]: se reemplazó un recurso o código por otro realizado por alguien más (ejemplo: una prueba para la ventana de inicio de sesión).
+[init]: commit especial que indica el inicio del repositorio.
+[incomplete]: commit especial que indica que se ha respaldado una versión inestable o incompleta de la funcionalidad. Se recomienda usarlo como una forma de indicar un respaldo temporal del trabajo hacia una versión estable de la funcionalidad que se está programando, pero que se tiene que dejar por un momento. 
+
+*/
