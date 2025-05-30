@@ -3,6 +3,8 @@ let txtEstatura = document.querySelector("#txtEstatura");
 
 let btnCalcularIMC = document.querySelector("#btnCalcularIMC");
 
+let parrafoResultado = document.querySelector("#sctResultado p")
+
 
 /* Función para calcular el IMC con la fórmula: IMC = peso / estatura^2
 Datos de prueba en kg       m       IMC
@@ -12,8 +14,22 @@ Datos de prueba en kg       m       IMC
 function calcularIMC() {
     let peso = txtPeso.value;
     let estatura = txtEstatura.value;
-    let imc = peso / Math.pow(estatura, 2);
-    console.log("El IMC es: ", imc);
+    if (validarCamposVacios() === false) {
+        let imc = peso / Math.pow(estatura, 2);
+        parrafoResultado.innerText = imc.toFixed(2);
+    } else {
+        parrafoResultado.innerText = "Por favor complete los campos vacíos."
+    }
+}
+function validarCamposVacios(){
+    let error = false; //No hay errores
+    if (txtPeso.value === ""){
+        error = true;
+    }
+    if (txtEstatura.value === ""){
+        error = true;
+    }
+    return error;
 }
 
 btnCalcularIMC.addEventListener("click", calcularIMC);
