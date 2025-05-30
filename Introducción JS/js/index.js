@@ -54,5 +54,37 @@ Datos de prueba:    Palabra         Resultado esperado
                     casa            no es palíndromo
 
 Nota: Puede usar split(), reverse(), join() o toLowerCase(), sin embargo, debe investigar su uso.
-*/
+*/ 
 
+let peso = document.getElementById('peso').value;
+let estatura = document.getElementById('estatura').value;
+let btn = document.getElementById('btn')
+const imcText = document.getElementById('imc');
+
+
+function calcularIMC(peso, estatura){
+    let imc = peso/Math.pow(estatura,2);
+    console.log("Hola")
+    imcText.textContent = "Su IMC es de: "+(imc==NaN?" ":imc.toFixed(2));
+}
+
+btn.addEventListener('click',calcularIMC(peso,estatura));
+
+
+
+
+function areaRectangulo(base, altura){
+    //Asignar altura = base si solo existe un dato de entrada
+    if (altura == undefined){ 
+        altura = base;
+    }
+    //Verificar que los datos de entrada son números
+    if (typeof base !== "number" || typeof altura !== "number" || base <= 0 || altura <= 0){
+        return "Error"
+    }
+    return base * altura;
+}
+// console.log(areaRectangulo(5,3));
+// console.log(areaRectangulo(4));
+// console.log(areaRectangulo("4", 2));
+// console.log(areaRectangulo(2, 0));
