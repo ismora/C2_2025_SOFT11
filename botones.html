@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejemplo de Botones con Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    body {
+        background-color: #f8f9fa;
+    }
+    .code-box {
+        background: #212529;
+        color: #f8f9fa;
+        padding: 1rem;
+        border-radius: 5px;
+        font-family: monospace;
+        overflow-x: auto;
+    }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="mb-4">Botones en Bootstrap</h1>
+        <p class="lead">Bootstrap ofrece una variedad de botones listos para usar con estilos, tamaños e íconos.</p>
+
+        <h3>Código de ejemplo</h3>
+        <div class="code-box mb-4">
+            &lt;button type="button" class="btn btn-primary"&gt;Guardar&lt;/button&gt;<br>
+            &lt;button type="button" class="btn btn-outline-danger"&gt;Eliminar&lt;/button&gt;<br>
+            &lt;button type="button" class="btn btn-warning" disabled&gt;Procesando...&lt;/button&gt;
+        </div>
+
+        <h3>Modificaciones posibles:</h3>
+        <ul>
+            <li><strong>Colores:</strong> <code>btn-success</code>, <code>btn-danger</code>, etc.</li>
+            <li><strong>Tamaño:</strong> <code>btn-sm</code>, <code>btn-lg</code>.</li>
+            <li><strong>Deshabilitar:</strong> <code>disabled</code> para inhabilitar botón.</li>
+            <li><strong>Íconos:</strong> Combinar con Bootstrap Icons (si están cargados).</li>
+        </ul>
+
+        <h3>Ejemplo editado con variantes:</h3>
+        <div class="d-flex gap-3 flex-wrap">
+            <button type="button" class="btn btn-success btn-lg">✔ Guardar</button>
+            <button type="button" class="btn btn-outline-danger btn-sm">✖ Eliminar</button>
+            <button type="button" class="btn btn-warning" disabled>⏳ Procesando...</button>
+            <button type="button" class="btn btn-dark">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Cargando
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

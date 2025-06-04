@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejemplo de Cartas con Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    body {
+        background-color: #f8f9fa;
+    }
+    .code-box {
+        background: #212529;
+        color: #f8f9fa;
+        padding: 1rem;
+        border-radius: 5px;
+        font-family: monospace;
+        overflow-x: auto;
+    }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="mb-4">Cartas (Cards) con Bootstrap</h1>
+        <p class="lead">Las cartas son componentes versátiles ideales para presentar información de forma ordenada y visualmente atractiva.</p>
+
+        <h3>Código de ejemplo</h3>
+        <div class="code-box mb-4">
+            &lt;div class="card" style="width: 18rem;"&gt;
+            &lt;img src="imagen.jpg" class="card-img-top" alt="..."&gt;
+            &lt;div class="card-body"&gt;
+            &lt;h5 class="card-title"&gt;Título&lt;/h5&gt;
+            &lt;p class="card-text"&gt;Contenido descriptivo.&lt;/p&gt;
+            &lt;a href="#" class="btn btn-primary"&gt;Leer más&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </div>
+
+        <h3>Ejemplo básico</h3>
+        <div class="card mb-4" style="width: 18rem;">
+        <img src="https://via.placeholder.com/286x160" class="card-img-top" alt="Imagen">
+        <div class="card-body">
+            <h5 class="card-title">Título</h5>
+            <p class="card-text">Contenido descriptivo.</p>
+            <a href="#" class="btn btn-primary">Leer más</a>
+        </div>
+        </div>
+
+        <h3>Modificaciones posibles:</h3>
+        <ul>
+            <li><strong>Color:</strong> Usar <code>bg-success</code>, <code>bg-warning</code>, etc.</li>
+            <li><strong>Contenido:</strong> Incluir listas, botones extra o íconos.</li>
+            <li><strong>Diseño:</strong> Combinar varias cartas en columnas.</li>
+        </ul>
+
+        <h3>Ejemplo editado</h3>
+        <div class="card text-white bg-success mb-3" style="max-width: 22rem;">
+        <div class="card-header">Producto Destacado</div>
+        <img src="https://via.placeholder.com/320x160" class="card-img-top" alt="Imagen destacada">
+        <div class="card-body">
+            <h5 class="card-title">Auriculares Inalámbricos</h5>
+            <p class="card-text">Sonido de alta fidelidad, conexión Bluetooth 5.2 y hasta 20h de batería.</p>
+            <ul class="list-unstyled mb-3">
+            <li>✔️ Envío gratuito</li>
+            <li>✔️ 2 años de garantía</li>
+            </ul>
+            <a href="#" class="btn btn-light">Comprar ahora</a>
+        </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
