@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alineación en Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .demo-container {
+            height: 150px;
+            margin-bottom: 20px;
+            border: 1px solid #dee2e6;
+            background-color: #f8f9fa;
+        }
+        .demo-item {
+            width: 100px;
+            background-color: #0d6efd;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin: 5px;
+        }
+        .code-example {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-family: monospace;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="text-center mb-5">Alineación en Bootstrap</h1>
+        
+        <!-- Sección d-flex -->
+        <section>
+            <h2>1. Contenedor Flex (d-flex)</h2>
+            <p>Primero necesitamos establecer el contenedor como flexbox con <code>d-flex</code>.</p>
+            
+            <div class="code-example">
+                &lt;div class="d-flex"&gt;
+                &lt;!-- Elementos a alinear --&gt;
+                &lt;/div&gt;
+            </div>
+            
+            <h4>Ejemplo:</h4>
+            <div class="demo-container d-flex">
+                <div class="demo-item">Item 1</div>
+                <div class="demo-item">Item 2</div>
+                <div class="demo-item">Item 3</div>
+            </div>
+        </section>
+        
+        <!-- Sección justify-content -->
+        <section>
+            <h2>2. Alineación Horizontal (justify-content)</h2>
+            <p>Controla la alineación a lo largo del eje principal (horizontal por defecto).</p>
+            
+            <h4>justify-content-start (por defecto)</h4>
+            <div class="code-example">
+                &lt;div class="d-flex justify-content-start"&gt;
+            </div>
+            <div class="demo-container d-flex justify-content-start">
+                <div class="demo-item">Start</div>
+                <div class="demo-item">Start</div>
+            </div>
+            
+            <h4>justify-content-center</h4>
+            <div class="code-example">
+                &lt;div class="d-flex justify-content-center"&gt;
+            </div>
+            <div class="demo-container d-flex justify-content-center">
+                <div class="demo-item">Center</div>
+                <div class="demo-item">Center</div>
+            </div>
+            
+            <h4>justify-content-end</h4>
+            <div class="code-example">
+                &lt;div class="d-flex justify-content-end"&gt;
+            </div>
+            <div class="demo-container d-flex justify-content-end">
+                <div class="demo-item">End</div>
+                <div class="demo-item">End</div>
+            </div>
+            
+            <h4>justify-content-between</h4>
+            <div class="code-example">
+                &lt;div class="d-flex justify-content-between"&gt;
+            </div>
+            <div class="demo-container d-flex justify-content-between">
+                <div class="demo-item">Between</div>
+                <div class="demo-item">Between</div>
+            </div>
+            
+            <h4>justify-content-around</h4>
+            <div class="code-example">
+                &lt;div class="d-flex justify-content-around"&gt;
+            </div>
+            <div class="demo-container d-flex justify-content-around">
+                <div class="demo-item">Around</div>
+                <div class="demo-item">Around</div>
+            </div>
+        </section>
+        
+        <!-- Sección align-items -->
+        <section>
+            <h2>3. Alineación Vertical (align-items)</h2>
+            <p>Controla la alineación a lo largo del eje transversal (vertical por defecto).</p>
+            
+            <h4>align-items-start</h4>
+            <div class="code-example">
+                &lt;div class="d-flex align-items-start" style="height: 150px;"&gt;
+            </div>
+            <div class="demo-container d-flex align-items-start">
+                <div class="demo-item">Start</div>
+                <div class="demo-item" style="height: 80px;">Start</div>
+            </div>
+            
+            <h4>align-items-center</h4>
+            <div class="code-example">
+                &lt;div class="d-flex align-items-center" style="height: 150px;"&gt;
+            </div>
+            <div class="demo-container d-flex align-items-center">
+                <div class="demo-item">Center</div>
+                <div class="demo-item" style="height: 80px;">Center</div>
+            </div>
+            
+            <h4>align-items-end</h4>
+            <div class="code-example">
+                &lt;div class="d-flex align-items-end" style="height: 150px;"&gt;
+            </div>
+            <div class="demo-container d-flex align-items-end">
+                <div class="demo-item">End</div>
+                <div class="demo-item" style="height: 80px;">End</div>
+            </div>
+            
+            <h4>align-items-stretch (por defecto)</h4>
+            <div class="code-example">
+                &lt;div class="d-flex align-items-stretch" style="height: 150px;"&gt;
+            </div>
+            <div class="demo-container d-flex align-items-stretch">
+                <div class="demo-item">Stretch</div>
+                <div class="demo-item">Stretch</div>
+            </div>
+        </section>
+        
+        <!-- Sección align-self -->
+        <section>
+            <h2>4. Alineación de Elementos Individuales (align-self)</h2>
+            <p>Puedes alinear elementos individuales dentro de un contenedor flex.</p>
+            
+            <div class="code-example">
+                &lt;div class="d-flex" style="height: 150px;"&gt;
+                &lt;div class="align-self-start"&gt;Arriba&lt;/div&gt;
+                &lt;div class="align-self-center"&gt;Centro&lt;/div&gt;
+                &lt;div class="align-self-end"&gt;Abajo&lt;/div&gt;
+                &lt;/div&gt;
+            </div>
+            
+            <div class="demo-container d-flex">
+                <div class="demo
+                <!-- Continuación del documento HTML anterior -->
+
+<div class="container py-5">
+    <!-- Sección Alineación Responsive -->
+    <section>
+        <h2>7. Alineación Responsive</h2>
+        <p>Bootstrap permite controlar la alineación en diferentes breakpoints usando sufijos como -sm, -md, -lg, -xl, -xxl.</p>
+        
+        <h4>Ejemplo: Cambiar alineación en pantallas medianas</h4>
+        <div class="code-example">
+            &lt;div class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-center"&gt;
+        </div>
+        
+        <div class="demo-container d-flex flex-column flex-md-row justify-content-md-between align-items-md-center">
+            <div class="demo-item">Responsive</div>
+            <div class="demo-item">Design</div>
+            <div class="demo-item">Bootstrap</div>
+        </div>
+        
+        <p class="mt-3"><strong>Nota:</strong> Redimensiona la ventana para ver el cambio de alineación.</p>
+    </section>
+    
+    <!-- Sección Centrado Perfecto -->
+    <section>
+        <h2>8. Centrado Perfecto</h2>
+        <p>Para centrar un elemento tanto horizontal como verticalmente en su contenedor:</p>
+        
+        <div class="code-example">
+            &lt;div class="d-flex justify-content-center align-items-center" style="height: 300px;"&gt;
+            &lt;div class="text-center"&gt;
+            &lt;h3&gt;Contenido centrado&lt;/h3&gt;
+            &lt;p&gt;Tanto horizontal como verticalmente&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </div>
+        
+        <div class="demo-container d-flex justify-content-center align-items-center" style="height: 250px;">
+            <div class="text-center">
+                <h3>Contenido centrado</h3>
+                <p>Tanto horizontal como verticalmente</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección Espaciado y Orden -->
+    <section>
+        <h2>9. Espaciado y Ordenamiento</h2>
+        <p>Complementando la alineación, Bootstrap ofrece utilidades para espaciado y ordenamiento.</p>
+        
+        <h4>Margenes Automáticos (mx-auto, my-auto)</h4>
+        <div class="code-example">
+            &lt;div class="d-flex" style="height: 150px;"&gt;
+            &lt;div class="mx-auto my-auto demo-item"&gt;Centrado con márgenes&lt;/div&gt;
+            &lt;/div&gt;
+        </div>
+        <div class="demo-container d-flex" style="height: 150px;">
+            <div class="mx-auto my-auto demo-item">Centrado con márgenes</div>
+        </div>
+        
+        <h4>Ordenamiento (order)</h4>
+        <div class="code-example">
+            &lt;div class="d-flex"&gt;
+            &lt;div class="demo-item order-3"&gt;Primero en HTML&lt;/div&gt;
+            &lt;div class="demo-item order-1"&gt;Segundo en HTML&lt;/div&gt;
+            &lt;div class="demo-item order-2"&gt;Tercero en HTML&lt;/div&gt;
+            &lt;/div&gt;
+        </div>
+        <div class="demo-container d-flex">
+            <div class="demo-item order-3">Primero en HTML</div>
+            <div class="demo-item order-1">Segundo en HTML</div>
+            <div class="demo-item order-2">Tercero en HTML</div>
+        </div>
+    </section>
+    
+    <!-- Sección Alineación de Texto -->
+    <section>
+        <h2>10. Alineación de Texto</h2>
+        <p>Complementario a las utilidades flex, Bootstrap tiene clases para alinear texto:</p>
+        
+        <div class="code-example">
+            &lt;p class="text-start"&gt;Texto al inicio (izquierda)&lt;/p&gt;
+            &lt;p class="text-center"&gt;Texto centrado&lt;/p&gt;
+            &lt;p class="text-end"&gt;Texto al final (derecha)&lt;/p&gt;
+        </div>
+        
+        <div class="demo-container">
+            <p class="text-start bg-light p-2">Texto al inicio (izquierda)</p>
+            <p class="text-center bg-light p-2">Texto centrado</p>
+            <p class="text-end bg-light p-2">Texto al final (derecha)</p>
+        </div>
+        
+        <h4 class="mt-4">Alineación vertical de texto</h4>
+        <div class="code-example">
+            &lt;span class="align-baseline"&gt;baseline&lt;/span&gt;
+            &lt;span class="align-top"&gt;top&lt;/span&gt;
+            &lt;span class="align-middle"&gt;middle&lt;/span&gt;
+            &lt;span class="align-bottom"&gt;bottom&lt;/span&gt;
+            &lt;span class="align-text-top"&gt;text-top&lt;/span&gt;
+            &lt;span class="align-text-bottom"&gt;text-bottom&lt;/span&gt;
+        </div>
+        
+        <div class="demo-container" style="height: 100px;">
+            <span class="align-baseline demo-item">baseline</span>
+            <span class="align-top demo-item">top</span>
+            <span class="align-middle demo-item">middle</span>
+            <span class="align-bottom demo-item">bottom</span>
+            <span class="align-text-top demo-item">text-top</span>
+            <span class="align-text-bottom demo-item">text-bottom</span>
+        </div>
+    </section>
+    
+    <!-- Sección Wrap -->
+    <section>
+        <h2>11. Flex Wrap</h2>
+        <p>Controla cómo los elementos flexibles se envuelven cuando no caben en una línea.</p>
+        
+        <h4>flex-nowrap (por defecto)</h4>
+        <div class="code-example">
+            &lt;div class="d-flex flex-nowrap"&gt;
+        </div>
+        <div class="demo-container d-flex flex-nowrap">
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+        </div>
+        
+        <h4>flex-wrap</h4>
+        <div class="code-example">
+            &lt;div class="d-flex flex-wrap"&gt;
+        </div>
+        <div class="demo-container d-flex flex-wrap">
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+        </div>
+        
+        <h4>flex-wrap-reverse</h4>
+        <div class="code-example">
+            &lt;div class="d-flex flex-wrap-reverse"&gt;
+        </div>
+        <div class="demo-container d-flex flex-wrap-reverse">
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+            <div class="demo-item">Item</div>
+        </div>
+    </section>
+    
+    <!-- Sección Conclusión -->
+    <section class="mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Resumen de Alineación en Bootstrap</h3>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><code>d-flex</code> - Crea un contenedor flex</li>
+                    <li class="list-group-item"><code>justify-content-*</code> - Alineación horizontal</li>
+                    <li class="list-group-item"><code>align-items-*</code> - Alineación vertical</li>
+                    <li class="list-group-item"><code>align-self-*</code> - Alineación individual</li>
+                    <li class="list-group-item"><code>flex-direction-*</code> - Dirección de los elementos</li>
+                    <li class="list-group-item"><code>flex-wrap-*</code> - Control de múltiples líneas</li>
+                    <li class="list-group-item">Clases responsive con breakpoints (<code>-sm</code>, <code>-md</code>, etc.)</li>
+                    <li class="list-group-item"><code>mx-auto</code>, <code>my-auto</code> - Centrado con márgenes</li>
+                    <li class="list-group-item"><code>order-*</code> - Control del orden visual</li>
+                    <li class="list-group-item"><code>text-*</code> - Alineación de texto</li>
+                </ul>
+                <div class="mt-3 text-center">
+                    <a href="https://getbootstrap.com/docs/5.3/utilities/flex/" class="btn btn-primary" target="_blank">Documentación Oficial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
