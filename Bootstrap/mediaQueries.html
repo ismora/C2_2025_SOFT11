@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media queries</title>
+    <link rel="stylesheet" href="css/mediaQueries.css">
+    <link rel="stylesheet" href="css/encabezados.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Media queries</h1>
+            <p>Condicionales en CSS que permite aplicar estilos específicos según las características del
+                dispositivo o del entorno de visualización.</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Sección a</a></li>
+                <li><a href="#">Sección b</a></li>
+                <li><a href="#">Sección c</a></li>
+                <li><a href="#">Sección d</a></li>
+                <li><a href="#">Sección e</a></li>
+                <li><a href="#">Sección f</a></li>
+                <li><a href="#">Sección g</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-content">
+            <div class="card">
+                <h2>Estilo base (dispositivos móviles)</h2>
+                <div>
+                .element { <br>
+                &nbsp; propiedad: valor-xs; <br>
+                } <br>
+<br>
+                @media (min-width: 576px) { <br>
+                &nbsp; .element { <br>
+                    &nbsp; propiedad: valor-sm; <br>
+                &nbsp; } <br>
+                } <br>
+<br>
+                @media (min-width: 768px) { <br>
+                &nbsp; .element { <br>
+                    &nbsp; propiedad: valor-md; <br>
+                &nbsp; } <br>
+                } <br>
+                    </div>
+                </div>
+
+            <div class="card">
+                <h2>Tabletas (de 576px a 991.98px)</h2>
+                <div>
+                @media (min-width: 576px) and (max-width: 991.98px) {
+                    <br>&nbsp;.card {
+                    <br>&nbsp;&nbsp;    flex: 1 1 calc(50% - 20px);
+                    <br>&nbsp;}
+                        <br>
+                    <br>&nbsp;header {
+                    <br>&nbsp;&nbsp;    padding: 1.5rem;
+                    <br>&nbsp;}
+                }
+                </div>    
+            </div>
+
+            <div class="card">
+                <h2>Modo oscuro según preferencia del sistema</h2>
+                <div>
+                @media (prefers-color-scheme: dark) {
+                <br>&nbsp;    body {
+                <br>&nbsp;&nbsp;        background-color: #121212;
+                <br>&nbsp;&nbsp;        color: #f0f0f0;
+                <br>&nbsp;    }
+<br>
+                <br>&nbsp;    .card,
+                <br>&nbsp;    footer,
+                <br>&nbsp;    nav ul {
+                <br>&nbsp;&nbsp;        background-color: #1e1e1e;
+                <br>&nbsp;&nbsp;        color: #f0f0f0;
+                <br>&nbsp;    }
+<br>
+                <br>&nbsp;    .card h2 {
+                <br>&nbsp;&nbsp;        color: #64b5f6;
+                <br>&nbsp;&nbsp;        border-bottom-color: #333;
+                <br>&nbsp;    }
+<br>
+                <br>&nbsp;    nav ul li a {
+                <br>&nbsp;&nbsp;        color: #64b5f6;
+                <br>&nbsp;    }
+<br>
+                <br>&nbsp;    nav ul li a:hover {
+                <br>&nbsp;&nbsp;        background-color: #64b5f6;
+                <br>&nbsp;&nbsp;        color: #121212;
+                <br>&nbsp;    }
+                }
+                </div>  
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; Ejemplo de media queries - diseño responsivo</p>
+            <p>Cambiar el tamaño de la ventana para ver cómo se adapta el diseño</p>
+        </footer>
+    </div>
+    <!-- Incluir Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
