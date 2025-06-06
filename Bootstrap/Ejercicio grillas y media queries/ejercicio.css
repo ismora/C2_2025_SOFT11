@@ -107,6 +107,22 @@ footer {
 
 /* Escritorio (≥992px) */
 
+@media (min-width: 992px) {
+    body {
+        padding: var(--spacing-md);
+    }
+
+    .grid-system {
+        grid-template-columns: repeat(4, 1fr);
+        /* 3 columnas: Se expande a 3 columnas */
+        gap: var(--spacing-lg); /* Aumenta el padding del body y el margin-bottom del header */
+    }
+
+    header {
+        margin-bottom: var(--spacing-lg);
+    }
+}
+
 /* Ejercicio 1: Defina como se debe comportan la página web en páginas desde los 992px hasta los 1199px:
 - La grilla se debe convertir en una de 4 columnas.
 - Se debe mejorar la legibilidad con más espacio interno usando --spacing-lg.
