@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de grillas (grid) de Bootstrap</title>
+
+    <!-- Incluir Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/grillas.css">
+    <link rel="stylesheet" href="css/contenedores.css">
+    <link rel="stylesheet" href="css/encabezados.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header text-center">
+            <h1 class="display-4">Sistema de grillas de Bootstrap</h1>
+            <p class="lead">Diseños responsivos y adaptables a diferentes dispositivos de manera eficiente con filas y
+                columnas.</p>
+        </div>
+
+        <!-- Sección de conceptos básicos -->
+        <div class="example-container">
+            <h2><i class="bi bi-grid"></i> Conceptos básicos</h2>
+
+            <div class="breakpoint-info">
+                <h3>Contenedores</h3>
+                <p>Son el elemento más externo en el sistema de grillas:</p>
+                <ul>
+                    <li><code>.container</code>: Ancho fijo que cambia según el breakpoint.</li>
+                    <li><code> .container-fluid</code>: Ancho completo (100%) en todos los dispositivos.</li>
+                </ul>
+            </div>
+
+            <div class="breakpoint-info">
+                <h3>Breakpoints (puntos de ruptura)</h3>
+                <p>Valores en píxeles (px) donde el diseño "rompe" su estructura para reorganizarse.</p>
+
+                <div class="row text-center">
+                    <div class="col-md-2">
+                        <div class="device-icon">📱</div>
+                        <div>xs</div>
+                        <small>&lt;576px</small>
+                        <small><code>.col-12</code></small>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="device-icon">📱</div>
+                        <div>sm</div>
+                        <small>≥576px</small>
+                        <small><code>.col-sm-6</code></small>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="device-icon">💻</div>
+                        <div>md</div>
+                        <small>≥768px</small>
+                        <small><code>.col-md-4</code></small>
+                        <small><code>.d-md-block</code></small>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="device-icon">💻</div>
+                        <div>lg</div>
+                        <small>≥992px</small>
+                        <small><code>.col-lg-3</code></small>
+                        <small><code>.d-lg-none</code></small>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="device-icon">🖥️</div>
+                        <div>xl</div>
+                        <small>≥1200px</small>
+                        <small><code>.col-xl-2</code></small>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="device-icon">🖥️</div>
+                        <div>xxl</div>
+                        <small>≥1400px</small>
+                        <small><code>.container-xxl</code></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="breakpoint-info">
+                <h3>Filas (row)</h3>
+                <p>Agrupan columnas y:</p>
+                <ul>
+                    <li>Eliminan el padding del contenedor con márgenes negativos.</li>
+                    <li>Contienen las columnas que componen el diseño.</li>
+                    <li>Se deben usar siempre dentro de un contenedor.</li>
+                </ul>
+            </div>
+
+            <div class="breakpoint-info">
+                <h3>Columnas (col)</h3>
+                <p>Son donde se coloca el contenido y:</p>
+                <ul>
+                    <li>Tienen padding para crear espacio entre ellas (gutter).</li>
+                    <li>Se dimensionan con clases como col-*, col-sm-*, col-md-*, entre otras.</li>
+                    <li>Deben sumar 12 por fila. Si suman más, la última columna pasará a una nueva línea.</li>
+                </ul>
+
+                            <div class="visual-grid mb-4">
+                <div class="grid-column">1</div>
+                <div class="grid-column">2</div>
+                <div class="grid-column">3</div>
+                <div class="grid-column">4</div>
+                <div class="grid-column">5</div>
+                <div class="grid-column">6</div>
+                <div class="grid-column">7</div>
+                <div class="grid-column">8</div>
+                <div class="grid-column">9</div>
+                <div class="grid-column">10</div>
+                <div class="grid-column">11</div>
+                <div class="grid-column">12</div>
+            </div>
+            </div>
+
+
+
+
+            <div class="note-box">
+                <strong>En resumen:</strong> El sistema de grillas de Bootstrap divide la pantalla en 12 columnas virtuales. Las columnas se agrupan dentro de filas ("row"), que a su vez están contenidas dentro de un contenedor ("container" o
+                "container-fluid").
+            </div>
+        </div>
+
+        <!-- Ejemplo 1: Columnas iguales -->
+        <div class="example-container">
+            <h2>Ejemplo 1: Columnas de igual ancho</h2>
+            <p>Columnas que se distribuyen automáticamente el espacio disponible.</p>
+
+            <h3>Comportamiento: </h3>
+            <div class="row mb-4">
+                <div class="col grid-example">.col (automático)</div>
+                <div class="col grid-example">.col (automático)</div>
+                <div class="col grid-example">.col (automático)</div>
+            </div>
+
+
+            <h3>Código: </h3>
+            <div class="code-container">
+                &lt;div class="row"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="<span class="highlight">col</span>"&gt;.col (automático)&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="<span class="highlight">col</span>"&gt;.col (automático)&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="<span class="highlight">col</span>"&gt;.col (automático)&lt;/div&gt;<br>
+                &lt;/div&gt;
+            </div>
+
+            <div>
+                <h3>Explicación del código: </h3>
+                <ul>
+                    <li><code>row</code>: Crea un contenedor flexible que albergará las columnas.</li>
+                    <li><code>col</code>: Cada columna se expande automáticamente para ocupar el espacio disponible.
+                    </li>
+                    <li>Bootstrap divide el ancho total en partes iguales, con 3 columnas. Cada columna ocupa 4 de las
+                        12 columnas virtuales (4 + 4 + 4 = 12).</li>
+                    <li>Comportamiento responsivo: En dispositivos pequeños, las columnas se apilan verticalmente.</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <!-- Ejemplo 2: Anchos específicos -->
+        <div class="example-container">
+            <h2><i class="bi bi-aspect-ratio"></i> Ejemplo 2: Anchos específicos</h2>
+            <p>Columnas con tamaños definidos que suman 12 por fila.</p>
+
+            <h3>Comportamiento: </h3>
+            <div class="row mb-4">
+                <div class="col-3 grid-example">.col-3 (25%)</div>
+                <div class="col-6 grid-example">.col-6 (50%)</div>
+                <div class="col-3 grid-example">.col-3 (25%)</div>
+            </div>
+
+            <h3>Código:</h3>
+            <div class="code-container">
+                &lt;div class="row"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="<span class="highlight">col-3</span>"&gt;.col-3 (25%)&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="<span class="highlight">col-6</span>"&gt;.col-6 (50%)&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="<span class="highlight">col-3</span>"&gt;.col-3 (25%)&lt;/div&gt;<br>
+                &lt;/div&gt;
+            </div>
+
+            <div>
+                <h3>Explicación del código: </h3>
+                <ul>
+                    <li>Especificar el tamaño exacto de cada columna: </li>
+                    <ul>
+                        <li>col-3: 3/12 = 25% del ancho disponible.</li>
+                        <li>col-6: 6/12 = 50% del ancho.</li>
+                        <li>col-3: 3/12 = 25% del ancho.</li>
+                    </ul>
+                    <li>La suma debe ser 12 (3+6+3=12) para ocupar toda la fila.</li>
+                    <li>Comportamiento fijo: Estos tamaños se mantienen en todos los dispositivos.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Ejemplo 3: Diseño responsivo -->
+        <div class="example-container">
+            <h2><i class="bi bi-phone"></i> Ejemplo 3: Diseño responsivo</h2>
+            <p>Columnas que cambian su tamaño según el dispositivo.</p>
+
+            <h3>Comportamiento: </h3>
+            <div class="row mb-4">
+                <div class="col-12 col-md-6 col-lg-4 grid-example">.col-12 .col-md-6 .col-lg-4</div>
+                <div class="col-12 col-md-6 col-lg-4 grid-example">.col-12 .col-md-6 .col-lg-4</div>
+                <div class="col-12 col-md-12 col-lg-4 grid-example">.col-12 .col-md-12 .col-lg-4</div>
+            </div>
+
+            <h3>Código:</h3>
+            <div class="code-container">
+                &lt;div class="row"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="<span class="highlight">col-12 col-md-6
+                    col-lg-4</span>"&gt;Columna&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="<span class="highlight">col-12 col-md-6
+                    col-lg-4</span>"&gt;Columna&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="<span class="highlight">col-12 col-md-12
+                    col-lg-4</span>"&gt;Columna&lt;/div&gt;<br>
+                &lt;/div&gt;
+            </div>
+
+            <div>
+                <h3>Explicación del código: </h3>
+                <ul>
+                    <li>Móviles (xs): <code>col-12</code> → Cada columna ocupa 100% del ancho (se apilan).</li>
+                    <li>Tablets (md):</li>
+                    <ul>
+                        <li><code>col-md-6</code> → Primeras dos columnas ocupan 50% cada una (6/12)
+                            .</li>
+                        <li><code>col-md-12</code> → Tercera columna ocupa 100% (debajo de las primeras dos)</li>
+                    </ul>
+                    <li>Escritorio (lg): col-lg-4 → Todas las columnas ocupan 33.33% (4/12).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Ejemplo 4: Columnas con offset -->
+        <div class="example-container">
+            <h2><i class="bi bi-arrow-right-circle"></i> Ejemplo 4: Columnas con offset</h2>
+            <p>Desplazar columnas usando espacios vacíos.</p>
+
+            <h3>Comportamiento 1: </h3>
+
+            <div class="row mb-4">
+                <div class="col-4 grid-example"> .col-4</div>
+                <div class="col-4 offset-4 grid-example"> .col-4 .offset-4</div>
+            </div>
+
+            <h3>Código:</h3>
+            <div class="code-container">
+                &lt;div class="row"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="col-4"&gt;.col-4&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="<span class="highlight">col-4 offset-4</span>"&gt;.col-4
+                .offset-4&lt;/div&gt;<br>
+                &lt;/div&gt;<br><br>
+            </div>
+
+            <div>
+                <h3>Explicación del código: </h3>
+                <ul>
+                    <li>Primera columna: 4 columnas de ancho. </li>
+                    <li>Segunda columna: 4 columnas de ancho + 4 columnas de margen = posición final. </li>
+                </ul>
+            </div>
+
+
+            <h3>Comportamiento 2: </h3>
+            <div class="row mb-4">
+                <div class="col-md-4 offset-md-4 grid-example"> .col-md-4 .offset-md-4</div>
+            </div>
+
+            <div class="code-container">
+                &lt;div class="row"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="<span class="highlight">col-md-4 offset-md-4</span>"&gt;.col-md-4
+                .offset-md-4&lt;/div&gt;<br>
+                &lt;/div&gt;
+            </div>
+
+            <div>
+                <h3>Explicación del código: </h3>
+                <ul>
+                    <li>Centrado: Columna de 4 con offset de 4 → (4 + 4 + 4 = 12) → centrado perfecto.</li>
+                    <li>Solo en dispositivos md y superiores por el prefijo md.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Ejemplo 5: Anidamiento de grillas -->
+        <div class="example-container">
+            <h2><i class="bi bi-boxes"></i> Ejemplo 5: Anidamiento de grillas</h2>
+            <p>Colocar una grilla dentro de otra grilla.</p>
+
+            <h3>Comportamiento: </h3>
+            <div class="row mb-4">
+                <div class="col-8 grid-example">Columna externa (8/12)
+                    <div class="row mt-3">
+                        <div class="col-6 grid-example">Columna anidada (6/12)</div>
+                        <div class="col-6 grid-example">Columna anidada (6/12)</div>
+                    </div>
+                </div>
+                <div class="col-4 grid-example">Columna externa (4/12)</div>
+            </div>
+            <h3>Código:</h3>
+            <div class="code-container">
+                &lt;div class="row"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="col-8"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Columna externa (8/12)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="row"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col-6"&gt;Columna anidada (6/12)&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col-6"&gt;Columna anidada (6/12)&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="col-4"&gt;Columna externa (4/12)&lt;/div&gt;<br>
+                &lt;/div&gt;
+            </div>
+
+            <div>
+                <h3>Explicación del código: </h3>
+                <ul>
+                    <li>Fila principal con dos columnas: 8/12 y 4/12.</li>
+                    <li>Dentro de la columna de 8/12, hay una nueva fila.</li>
+                    <li>Esta nueva fila contiene dos columnas de 6/12 cada una.</li>
+                    <li>Las columnas anidadas son relativas a su contenedor padre:</li>
+                    <ul>
+                        <li>Cada columna anidada: 6/12 = 50% del espacio disponible en la columna de 8/12.</li>
+                        <li>En términos absolutos: 50% de 66.66% (8/12) = 33.33% del contenedor principal.</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Ejemplo 6: Alineación vertical y horizontal -->
+        <div class="example-container">
+            <h2><i class="bi bi-layout-text-sidebar-reverse"></i> Ejemplo 6: Alineación</h2>
+            <p>Alinear contenido dentro de las filas y columnas.</p>
+
+            <h3>Comportamiento: Alineación vertical</h3>
+            <div class="row mb-4 align-items-start"
+                style="min-height: 150px; background-color: rgba(12, 176, 174, 0.145); padding: 15px;">
+                <div class="col grid-example">.align-items-start</div>
+                <div class="col grid-example align-self-center">.align-self-center</div>
+                <div class="col grid-example">.align-items-start</div>
+            </div>
+
+            <h3>Comportamiento: Alineación horizontal</h3>
+            <div class="row mb-4 justify-content-between"
+                style="background-color: rgba(9, 133, 227, 0.145); padding: 15px;">
+                <div class="col-3 grid-example">.justify-content-between</div>
+                <div class="col-3 grid-example">.justify-content-between</div>
+            </div>
+            <h3>Código:</h3>
+            <div class="code-container">
+                <span class="highlight">// Alineación vertical</span><br>
+                &lt;div class="row <span class="highlight">align-items-start</span>"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="col"&gt;...&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="col <span class="highlight">align-self-center</span>"&gt;...&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="col"&gt;...&lt;/div&gt;<br>
+                &lt;/div&gt;<br><br>
+
+                <span class="highlight">// Alineación horizontal</span><br>
+                &lt;div class="row <span class="highlight">justify-content-between</span>"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="col-3"&gt;...&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="col-3"&gt;...&lt;/div&gt;<br>
+                &lt;/div&gt;
+            </div>
+
+            <div>
+                <h3>Explicación del código: </h3>
+                <ul>
+                    <li>Alineación vertical:</li>
+                    <ul>
+                        <li><code>align-items-start</code>: Alinea todas las columnas en la parte superior de la fila.
+                        </li>
+                        <li><code>align-items-center</code>: Anula la alineación general para centrar una columna
+                            específica.</li>
+                    </ul>
+                    <li>Alineación horizontal:</li>
+                    <ul>
+                        <li><code>justify-content-between</code>: Distribuye el espacio sobrante entre las columnas.
+                        </li>
+
+                        <li>Las dos columnas de 3/12 (25% cada una) se colocan en los extremos con espacio entre ellas
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Ejemplo 7: Ordenamiento -->
+        <div class="example-container">
+            <h2><i class="bi bi-sort-down"></i> Ejemplo 7: Ordenamiento</h2>
+            <p>Cambiar el orden de las columnas independientemente de su posición en el HTML.</p>
+
+            <h3>Comportamiento: </h3>
+            <div class="row mb-4">
+                <div class="col grid-example order-3">Primero en HTML, tercero visualmente (.order-3)</div>
+                <div class="col grid-example order-1">Segundo en HTML, primero visualmente (.order-1)</div>
+                <div class="col grid-example order-2">Tercero en HTML, segundo visualmente (.order-2)</div>
+            </div>
+            <h3>Código:</h3>
+            <div class="code-container">
+                &lt;div class="row"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="col <span class="highlight">order-3</span>"&gt;Primero en
+                HTML&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="col <span class="highlight">order-1</span>"&gt;Segundo en
+                HTML&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="col <span class="highlight">order-2</span>"&gt;Tercero en
+                HTML&lt;/div&gt;<br>
+                &lt;/div&gt;
+            </div>
+
+            <div>
+                <h3>Explicación del código: </h3>
+                <ul>
+                    <li><code>order-*</code>: Controla el orden visual independiente del orden en el HTML.</li>
+                    <li>Orden visual resultante:
+                        <ul>
+                            <li>Elemento con order-1 (segundo en HTML).</li>
+                            <li>Elemento con order-2 (tercero en HTML).</li>
+                            <li>Elemento con order-3 (primero en HTML).</li>
+                        </ul>
+                    <li>Valores disponibles: order-1 a order-5 (también con prefijos responsivos: order-md-2).</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- Sección de otros -->
+        <div class="example-container">
+            <h2><i class="bi bi-grid"></i> Características adicionales </h2>
+
+            <div>
+                <h3>Columnas que se ajustan automáticamente:</h3>
+                <p>Bootstrap distribuye automáticamente el espacio disponible. Mantiene columnas del mismo ancho dentro
+                    de cada fila.</p>
+                <div class="row grid-example">
+                    <div class="col">1 de 2</div>
+                    <div class="col">2 de 2</div>
+                </div>
+
+                <div class="row grid-example">
+                    <div class="col">1 de 3</div>
+                    <div class="col">2 de 3</div>
+                    <div class="col">3 de 3</div>
+                </div>
+            </div>
+
+            <div>
+                <h3>Combinación de tamaños fijos y automáticos:</h3>
+                <p>
+                    Columnas automáticas se ajustan al espacio restante, en el ejemplo el cálculo es: (100% - 50%) / 2 =
+                    25% cada columna automática. </p>
+
+                <div class="row grid-example">
+                    <div class="col">Auto</div>
+                    <div class="col-6">Fijo (50%)</div>
+                    <div class="col">Auto</div>
+                </div>
+
+            </div>
+
+            <div>
+                <h3>Gutters (espaciado entre columnas):</h3>
+                <p>
+                    Columnas automáticas se ajustan al espacio restante, en el ejemplo el cálculo es: (100% - 50%) / 2 =
+                    25% cada columna automática. </p>
+
+                <div class="row g-3 grid-example">
+                    <div class="col">Columna con gutter</div>
+                    <div class="col">Columna con gutter</div>
+                </div>
+
+                <div class="note-box">
+                    <strong>Nota:</strong>
+                    <ul>
+                        <li>g-3: Añade espacio (gutter) entre columnas</li>
+                        <li>Valores disponibles: g-0 a g-5 (de 0rem a 3rem)</li>
+                        <li>También se puede controlar horizontal/vertical: gx-*, gy-*</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Sección de recomendaciones -->
+        <div class="example-container">
+            <h2><i class="bi bi-grid"></i> Recomendaciones </h2>
+
+            <ul>
+                <li>Siempre usar un contenedor. <br>
+                    <div class="code-container">
+                        &lt;div class="container"&gt; <br>
+                        &lt;!-- Filas y columnas aquí --&gt;<br>
+                        &lt;/div&gt;
+                    </div>
+                </li>
+
+                <li>Mantener la suma en 12, ya que si suman más, se crearán filas adicionales automáticamente.</li>
+                <li>Enfoque mobile-first: Se deben definir primero los estilos para móviles (sin prefijo) y luego se
+                    añaden modificadores para pantallas más grandes.</li>
+                <li>Usar clases responsivas.
+                    <div class="code-container">
+                        &lt;class="col-12 col-sm-6 col-md-4 col-lg-3"&gt; <br>
+                        &lt;!-- Contenido --&gt;<br>
+                        &lt;/div&gt;
+                    </div>
+                </li>
+
+                <li>Evitar alturas fijas, ya que se debe permitir que el contenido determine la altura de las filas y se
+                    deben utilizar utilidades de espaciado para control vertical</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Incluir Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
