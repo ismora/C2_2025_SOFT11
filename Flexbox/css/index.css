@@ -1,0 +1,33 @@
+#sctContenedor { /* id = #nombreId*/
+    border: 2px solid #000;
+    height: 500px;
+    
+}
+
+.cuadro{ /* Clase = .nombreClase */
+    width: 75px;
+    height: 75px;
+    border: 2px solid #000;
+}
+
+/* https://flatuicolors.com/ */
+.verde{
+    background-color: #10ac84;
+}
+
+.morado{
+    background-color: #723ae4;
+}
+
+.rojo{
+    background-color: #ff6b6b;
+}
+
+.amarillo{
+    background-color: #feca57;
+}
+
+
+
+
+/* Más sobre flexbox en https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
