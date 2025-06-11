@@ -1,0 +1,19 @@
+.caja{
+    height: 60px;
+}
+
+.verde{
+    background-color: rgb(23, 169, 50);
+}
+
+.celeste{
+    background-color: rgb(151, 188, 230);
+}
+
+.amarillo{
+    background-color: rgb(212, 212, 74);
+}
+
+.morado{
+    background-color: rgb(141, 91, 127);
+}
