@@ -1,0 +1,184 @@
+:root {
+    --color-primary: #6a11cb;
+    --color-secondary: #2575fc;
+    --spacing-sm: 15px;
+    --spacing-md: 25px;
+    --spacing-lg: 40px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(to right, #f5f7fa, #e4e7eb);
+    color: #333;
+    padding: var(--spacing-sm);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Sistema de grilla base (mobile first) */
+.grid-system {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* 1 columna: En pantallas pequeñas (como celulares), el contenido se muestra en una sola columna, apilando los elementos verticalmente. Cada elemento ocupa todo el ancho disponible. */
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.grid-item {
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item h3 {
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f2f5;
+}
+
+footer {
+    text-align: center;
+    padding: var(--spacing-md);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Media Queries para modificar la grilla: Los media queries modifican el diseño según el ancho del dispositivo. Se definen varios "breakpoints", que son anchos mínimos a partir de los cuales se aplican ciertos estilos.  */
+
+/* Tablets (≥576px) */
+@media (min-width: 576px) {
+    .grid-system {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columnas: Cuando la pantalla mide al menos 576px de ancho, la grilla pasa de 1 a 2 columnas. */
+        /* repeat(2, 1fr) es una forma abreviada que significarepetir 2 veces una columna que ocupe 1 fracción del espacio disponible. */
+        gap: var(--spacing-sm);
+    }
+
+    header {
+        padding: var(--spacing-md);
+    }
+}
+
+/* Laptops (≥768px) */
+@media (min-width: 768px) {
+    body {
+        padding: var(--spacing-md);
+    }
+
+    .grid-system {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 columnas: Se expande a 3 columnas */
+        gap: var(--spacing-md);
+        /* Aumenta el padding del body y el margin-bottom del header */
+    }
+
+    header {
+        margin-bottom: var(--spacing-lg);
+    }
+}
+
+/* Escritorio (≥992px) */
+
+/* Ejercicio 1: Defina como se debe comportan la página web en páginas desde los 992px hasta los 1199px:
+- La grilla se debe convertir en una de 4 columnas.
+- Se debe mejorar la legibilidad con más espacio interno usando --spacing-lg.
+*/
+
+/* 
+Solución del ejercicio 1: */
+
+@media (min-width: 992px) {
+    .grid-system {
+        grid-template-columns: repeat(4, 1fr); /* columnas*/ 
+    }
+
+    .grid-item {
+        padding: var(--spacing-lg);
+    }
+}
+
+
+
+/* Pantallas grandes (≥1200px) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+        /* Ajuste del ancho máximo del contenedor y el espaciado entre columnas para aprovechar mejor las pantallas grandes. */
+    }
+
+    .grid-system {
+        gap: var(--spacing-lg);
+    }
+}
+
+/* Orientación horizontal en tablets */
+@media (min-width: 768px) and (orientation: landscape) {
+
+    /* Cambia el fondo de las tarjetas si el dispositivo está en orientación horizontal (modo paisaje), útil en tablets. */
+    .grid-item {
+        background-color: #f8f9ff;
+    }
+}
+
+/* Ejercicio 2: Detecte si el usuario tiene activado el modo oscuro y cambie los colores de fondo y texto para que se adapten a un entorno oscuro*/
+
+/* Solución del ejercicio 2 */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(to right, #1e1e1e, #2b2b2b);
+        color: #f0f0f0;
+    }
+
+    header {
+        background: linear-gradient(135deg, #3b0dab, #1a73e8);
+        color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    .grid-item {
+        background: #2e2e2e;
+        color: #ddd;
+        box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
+    }
+
+    .grid-item h3 {
+        color: #8ab4f8;
+        border-bottom: 2px solid #444;
+    }
+
+    footer {
+        background: #2e2e2e;
+        color: #ccc;
+        box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
+    }
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teclado Virtual con Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .keyboard-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .keyboard-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+        .key {
+            background-color: #ffffff;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 12px 15px;
+            margin: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.1s;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+            flex: 1;
+            min-width: 40px;
+            max-width: 60px;
+        }
+        .key:hover {
+            background-color: #e9ecef;
+        }
+        .key:active {
+            transform: translateY(2px);
+            box-shadow: none;
+        }
+        .key-space {
+            flex: 8;
+            max-width: 400px;
+        }
+        .key-shift, .key-tab, .key-caps, .key-enter, .key-backspace {
+            flex: 2;
+            max-width: 100px;
+        }
+        .key-special {
+            background-color: #dee2e6;
+        }
+        .input-display {
+            font-size: 24px;
+            height: 60px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .keyboard-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #495057;
+        }
+        @media (max-width: 576px) {
+            .key {
+                padding: 8px 10px;
+                font-size: 14px;
+                min-width: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="keyboard-title">
+            <h2>Teclado Virtual con Bootstrap</h2>
+            <p class="text-muted">Ejemplo de alineación con flexbox</p>
+        </div>
+        
+        <div class="mb-4">
+            <input type="text" class="form-control input-display" placeholder="Escribir aquí..." id="keyboardInput">
+        </div>
+        
+        <div class="keyboard-container">
+            <!-- Fila 1: Teclas numéricas -->
+            <div class="d-flex justify-content-center mb-2 keyboard-row">
+                <div class="key" data-key="`">`</div>
+                <div class="key" data-key="1">1</div>
+                <div class="key" data-key="2">2</div>
+                <div class="key" data-key="3">3</div>
+                <div class="key" data-key="4">4</div>
+                <div class="key" data-key="5">5</div>
+                <div class="key" data-key="6">6</div>
+                <div class="key" data-key="7">7</div>
+                <div class="key" data-key="8">8</div>
+                <div class="key" data-key="9">9</div>
+                <div class="key" data-key="0">0</div>
+                <div class="key" data-key="-">-</div>
+                <div class="key" data-key="=">=</div>
+                <div class="key key-special key-backspace" data-key="Backspace">⌫</div>
+            </div>
+            
+            <!-- Fila 2: Primera fila de letras -->
+            <div class="d-flex justify-content-center mb-1 keyboard-row">
+                <div class="key key-special key-tab" data-key="Tab">Tab</div>
+                <div class="key" data-key="q">Q</div>
+                <div class="key" data-key="w">W</div>
+                <div class="key" data-key="e">E</div>
+                <div class="key" data-key="r">R</div>
+                <div class="key" data-key="t">T</div>
+                <div class="key" data-key="y">Y</div>
+                <div class="key" data-key="u">U</div>
+                <div class="key" data-key="i">I</div>
+                <div class="key" data-key="o">O</div>
+                <div class="key" data-key="p">P</div>
+                <div class="key" data-key="[">[</div>
+                <div class="key" data-key="]">]</div>
+                <div class="key" data-key="\">\</div>
+            </div>
+            
+            <!-- Fila 3: Segunda fila de letras -->
+            <div class="d-flex justify-content-center mb-2 keyboard-row">
+                <div class="key key-special key-caps" data-key="CapsLock">Bloq Mayús</div>
+                <div class="key" data-key="a">A</div>
+                <div class="key" data-key="s">S</div>
+                <div class="key" data-key="d">D</div>
+                <div class="key" data-key="f">F</div>
+                <div class="key" data-key="g">G</div>
+                <div class="key" data-key="h">H</div>
+                <div class="key" data-key="j">J</div>
+                <div class="key" data-key="k">K</div>
+                <div class="key" data-key="l">L</div>
+                <div class="key" data-key=";">;</div>
+                <div class="key" data-key="'">'</div>
+                <div class="key key-special key-enter" data-key="Enter">Enter</div>
+            </div>
+            
+            
+            <!-- Fila 4: Tercera fila de letras -->
+            <div class="d-flex justify-content-center mb-2 keyboard-row">
+                <div class="key key-special key-shift" data-key="Shift">Shift</div>
+                <div class="key" data-key="z">Z</div>
+                <div class="key" data-key="x">X</div>
+                <div class="key" data-key="c">C</div>
+                <div class="key" data-key="v">V</div>
+                <div class="key" data-key="b">B</div>
+                <div class="key" data-key="n">N</div>
+                <div class="key" data-key="m">M</div>
+                <div class="key" data-key=",">,</div>
+                <div class="key" data-key=".">.</div>
+                <div class="key" data-key="/">/</div>
+                <div class="key key-special key-shift" data-key="Shift">Shift</div>
+            </div>
+            
+            <!-- Fila 5: Barra espaciadora -->
+            <div class="d-flex justify-content-center keyboard-row">
+                <div class="key key-special" data-key="Ctrl">Ctrl</div>
+                <div class="key key-special" data-key="Alt">Alt</div>
+                <div class="key key-space" data-key=" ">Espacio</div>
+                <div class="key key-special" data-key="Alt">Alt</div>
+                <div class="key key-special" data-key="Ctrl">Ctrl</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>
