@@ -1,7 +1,10 @@
 #sctContenedor { /* id = #nombreId*/
     border: 2px solid #000;
     height: 500px;
-    
+    display: flex;
+    flex-direction: row; /* Cambiar el eje principal */
+    justify-content: space-around; /* Alineación en el eje principal */
+    align-items: center;
 }
 
 .cuadro{ /* Clase = .nombreClase */
