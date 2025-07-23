@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario accesible</title>
+</head>
+
+<body>
+
+    <h1>Formulario de registro</h1>
+
+    <form action="">
+
+        <!-- Sección 1: Información Personal -->
+        <fieldset>
+            <legend>Información Personal</legend>
+
+            <label for="nombre">Nombre completo:</label><br>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+
+            <label for="email">Correo electrónico:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="telefono">Teléfono:</label><br>
+            <input type="tel" id="telefono" name="telefono"><br><br>
+        </fieldset>
+
+        <br>
+
+        <!-- Sección 2: Dirección -->
+        <fieldset>
+            <legend>Dirección</legend>
+
+            <label for="direccion">Dirección:</label><br>
+            <textarea id="direccion" name="direccion" rows="3" cols="40"></textarea><br><br>
+
+            <label for="ciudad">Ciudad:</label><br>
+            <input type="text" id="ciudad" name="ciudad"><br><br>
+
+            <label for="pais">País:</label><br>
+            <input type="text" id="pais" name="pais"><br><br>
+        </fieldset>
+
+        <br>
+
+        <!-- Sección 3: Preferencias -->
+        <fieldset>
+            <legend>Preferencias</legend>
+
+            <label for="contacto">Método de contacto preferido:</label><br>
+            <select id="contacto" name="contacto">
+                <option value="email">Correo electrónico</option>
+                <option value="telefono">Teléfono</option>
+            </select><br><br>
+
+            <label>Desea recibir noticias:</label><br>
+            <input type="radio" id="noticias-si" name="noticias" value="si">
+            <label for="noticias-si">Sí</label><br>
+            <input type="radio" id="noticias-no" name="noticias" value="no">
+            <label for="noticias-no">No</label><br><br>
+        </fieldset>
+
+        <br>
+
+        <!-- Botón de envío -->
+        <button type="submit">Enviar</button>
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- Formulario: Principio comprensible -->
+  <title>Formulario con validación personalizada</title>
+</head>
+<body>
+
+  <h1>Formulario de registro</h1>
+
+  <form id="formulario" novalidate>
+
+    <!-- Nombre -->
+    <label for="nombre">Nombre completo:</label><br>
+    <input type="text" id="nombre" name="nombre" required aria-describedby="error-nombre"><br>
+    <span id="error-nombre" ></span><br><br>
+
+    <!-- Correo electrónico -->
+    <label for="email">Correo electrónico:</label><br>
+    <input type="email" id="email" name="email" required aria-describedby="error-email"><br>
+    <span id="error-email" ></span><br><br>
+
+    <!-- Teléfono -->
+    <label for="telefono">Teléfono:</label><br>
+    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{8,15}" aria-describedby="error-telefono"><br>
+    <span id="error-telefono" ></span><br><br>
+
+    <button type="submit">Enviar</button>
+
+  </form>
+
+  <script src="js/validar_formulario.js">  </script>
+
+</body>
+</html>
