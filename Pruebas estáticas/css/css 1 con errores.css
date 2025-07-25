@@ -1,0 +1,121 @@
+/* styles.css */
+body {
+  background-color: #FFF;
+  font-size: 16px;
+}
+
+.Header {
+  color: red;
+  padding: 20px;
+}
+
+div>div {
+  margin-top: 10px;
+}
+
+a {
+  color: blue;
+}
+
+
+/* 1. Contenido externo inseguro */
+.unsafe-bg {
+  background: url("http://sitio-inseguro.com/imagen.jpg");
+  /* URL insegura */
+}
+
+/* 2. Expresión JavaScript insegura */
+.unsafe-expression {
+  width: expression(document.body.clientWidth > 800 ? "800px" : "auto");
+  /* JavaScript en CSS */
+}
+
+
+/* === PROBLEMAS DE MANTENIBILIDAD === */
+
+/* 3. Especificidad excesiva */
+body div#main.container>div.row>div.col-xs-12>ul>li>a.active {
+  color: red !important;
+  /* !important innecesario */
+}
+
+/* 4. Duplicación de código */
+.duplicate-1 {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.duplicate-2 {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #333;
+  /* Código duplicado */
+}
+
+/* 5. Reglas vacías */
+.empty-rule {
+  /* Esta regla está vacía */
+}
+
+/* 6. Selectores demasiado genéricos */
+div {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Afecta a TODOS los divs */
+}
+
+
+/* === PROBLEMAS DE RENDIMIENTO === */
+
+/* 7. Propiedades que causan repintado */
+.repaint-issue {
+  width: 100%;
+  height: 100px;
+  background-color: red;
+  animation: color-change 1s infinite;
+}
+
+@keyframes color-change {
+  0% {
+    background-color: red;
+  }
+
+  50% {
+    background-color: blue;
+  }
+
+  100% {
+    background-color: green;
+  }
+
+}
+
+.unknown-property {
+  box-alignment: center;
+  /* Propiedad inexistente */
+}
+
+.duplicate-section-1 {
+  width: 100%;
+  height: auto;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.duplicate-section-2 {
+  width: 100%;
+  height: auto;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Código duplicado */
+}

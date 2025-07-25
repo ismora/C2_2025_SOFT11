@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Página con errores para análisis estático</title>
+</head>
+<body>
+    <div class="container">
+        <h1>HTML con errores para análisis estático</h1>
+        
+        <div class="section">
+            <h2>Errores intencionales</h2>
+            <p>Esta página contiene varios errores de HTML que los validadores estáticos deberían detectar.</p>
+            
+            <div class="error-list">
+                <h3>Lista de errores incluidos:</h3>
+                <ul>
+                    <li>Elemento &lt;img&gt; sin atributo alt</li>
+                    <li>Elemento &lt;form&gt; sin atributo action</li>
+                    <li>Atributo href vacío en un enlace</li>
+                    <li>Etiqueta de cierre faltante (&lt;/div&gt;)</li>
+                    <li>Elementos no permitidos dentro de &lt;ul&gt; (texto directo)</li>
+                    <li>Atributo duplicado en un elemento</li>
+                    <li>Elemento &lt;li&gt; fuera de una lista</li>
+                    <li>Elemento &lt;div&gt; anidado incorrectamente en &lt;span&gt;</li>
+                    <li>Carácter & sin escape en URL</li>
+                    <li>Elemento &lt;script&gt; con tipo incorrecto</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Ejemplos de errores -->
+        <div class="section">
+            <h2>Elemento imagen sin texto alternativo</h2>
+            <!-- Error: Falta atributo alt -->
+            <img src="imagen-inexistente.jpg">
+        </div>
+        
+        <div class="section">
+            <h2>Formulario sin acción definida</h2>
+            <!-- Error: Falta atributo action -->
+            <form method="post">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        
+        <div class="section">
+            <h2>Enlace con URL vacía</h2>
+            <!-- Error: Atributo href vacío -->
+            <a href="">Enlace vacío</a>
+        </div>
+        
+        <div class="section">
+            <h2>Etiqueta de cierre faltante</h2>
+            <!-- Error: Falta etiqueta de cierre </div> -->
+            <div>
+                <p>Este div no tiene etiqueta de cierre</p>
+        </div>
+        
+        <div class="section">
+            <h2>Elementos inválidos en la lista</h2>
+            <!-- Error: Texto directo dentro de ul (solo debe contener li) -->
+            <ul>
+                Texto no permitido directamente en ul
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Atributo duplicado</h2>
+            <!-- Error: Atributo class duplicado -->
+            <p class="error" class="duplicado">Este párrafo tiene el atributo class duplicado</p>
+        </div>
+        
+        <div class="section">
+            <h2>Elemento de lista fuera de lista</h2>
+            <!-- Error: li fuera de ul/ol -->
+            <li>Elemento de lista sin lista padre</li>
+        </div>
+        
+        <div class="section">
+            <h2>Anidamiento iIncorrecto</h2>
+            <!-- Error: div dentro de span (no permitido) -->
+            <span>
+                <div>Div dentro de span (incorrecto)</div>
+            </span>
+        </div>
+        
+        <div class="section">
+            <h2>Carácter & sin escape</h2>
+            <!-- Error: & sin escape en URL -->
+            <a href="pagina.html?param=valor&otro=valor">Enlace con & sin escape</a>
+        </div>
+        
+        <div class="section">
+            <h2>Tipo de script incorrecto</h2>
+            <!-- Error: Tipo de script incorrecto -->
+            <script type="text/javscript">
+                console.log("Tipo de script mal escrito");
+            </script>
+        </div>
+        
+    </div>
+    
+    <footer>
+        <p>Esta página fue creada intencionalmente con errores para propósitos de demostración</p>
+    </footer>
+</body>
+</html>
