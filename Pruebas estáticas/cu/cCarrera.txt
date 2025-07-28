@@ -1,0 +1,23 @@
+Caso de uso: Sistema de gestión de biblioteca 
+Actor: Bibliotecario
+Propósito: Registrar nuevos libros en el sistema
+Precondiciones: Usuario autenticado como bibliotecario
+Garantía de éxito: Libro queda registrado en el sistema
+Garantía de mínimo compromiso: Sistema muestra error de validación
+
+Flujo principal:
+Bibliotecario selecciona "Agregar nuevo Llibro"
+
+Sistema muestra formulario con campos: ISBN, Título, Autor, Año, Género
+
+Bibliotecario ingresa datos del libro
+
+Bibliotecario hace clic en "Guardar"
+
+Sistema valida los datos
+
+Sistema verifica que el ISBN no exista
+
+Sistema registra el libro en la base de datos
+
+Sistema muestra mensaje de confirmación
