@@ -1,0 +1,20 @@
+Caso de uso: Sistema de reservas de restaurante 
+Actor: Cliente
+Propósito: Reservar mesa en restaurante
+Precondiciones: Ninguna
+
+Flujo principal:
+Cliente selecciona fecha y hora de reserva
+
+Cliente ingresa número de personas
+
+Cliente selecciona tipo de mesa (interior/terraza)
+
+Cliente ingresa nombre y teléfono de contacto
+
+Cliente hace clic en "Confirmar Reserva"
+
+Sistema valida disponibilidad
+
+Sistema verifica que el teléfono sea válido
+
