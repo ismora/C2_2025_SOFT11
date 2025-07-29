@@ -1,0 +1,17 @@
+Caso de uso: Sumar de dos números
+Actor: Usuario  
+Nivel: Objetivo de usuario  
+Propósito: Permitir al usuario sumar dos números introducidos y ver el resultado.  
+Precondiciones: Ninguna.  
+Postcondición: El sistema muestra la suma de los dos números.  
+
+Flujo Principal:
+1. El usuario abre la aplicación web.
+2. El sistema muestra dos campos de entrada y un botón de "Sumar".
+3. El usuario ingresa el primer número en el primer campo.
+4. El usuario ingresa el segundo número en el segundo campo.
+5. El usuario hace clic en el botón "Sumar".
+6. El sistema valida que ambos los campos.
+7. El sistema calcula la suma.
+8. El sistema muestra el resultado de la suma.
+9. El caso de uso termina.
