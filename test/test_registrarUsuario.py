@@ -12,8 +12,8 @@ import string
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 # URLs
-REGISTER_URL = "http://127.0.0.1:5500/C2-SCV0/App/front-end/usuario-registrar.html"  
-LIST_URL = "http://127.0.0.1:5500/C2-SCV0/App/front-end/usuario-listar.html" 
+REGISTER_URL = "http://127.0.0.1:5501/Front-end/usuario-registrar.html"  
+LIST_URL = "http://127.0.0.1:5501/Front-end/usuario-listar.html" 
 
 def generar_datos_usuario():
     """Genera datos de usuario aleatorios para la prueba"""
@@ -31,9 +31,7 @@ def verificar_usuario_en_tabla(correo):
     driver.get(LIST_URL)
     
     # Esperar a que la tabla cargue
-    WebDriverWait(driver, 15).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, "#tblUsuarios tbody tr"))
-    )
+    WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.CSS_SELECTOR, "#tblUsuarios tbody tr")))
     
     # Buscar el usuario por correo en la tabla
     filas = driver.find_elements(By.CSS_SELECTOR, "#tblUsuarios tbody tr")
@@ -54,6 +52,35 @@ try:
     print(f"Cédula: {usuario['cedula']}")
     print(f"Nombre: {usuario['nombre']}")
     
+    # 1. Navegar a la página de registro
+    print("\nPaso 1: Página de registro")
+    driver.get(REGISTER_URL)
+    
+    # Esperar a que cargue el formulario
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "btnGuardar")))
+    
+    # 2. Llenar el formulario
+    print("Paso 2: Llenando formulario")
+    driver.find_element(By.ID, "txtCorreo").send_keys(usuario["correo"])
+    driver.find_element(By.ID, "txtCedula").send_keys(usuario["cedula"])
+    driver.find_element(By.ID, "txtNombre").send_keys(usuario["nombre"])
+    driver.find_element(By.ID, "txtContrasenia").send_keys(usuario["contrasenia"])
+    
+    # Hacer clic en Guardar
+    print("Paso 3: Enviando formulario")
+    driver.find_element(By.ID, "btnGuardar").click()
+    
+    # Esperar a que se complete el registro
+    time.sleep(2)  # Espera para la operación asíncrona
+    
+      
+    #Verificar en la lista de usuarios
+    print("\nPaso 5: Verificando en lista de usuarios...")
+    usuario_encontrado = verificar_usuario_en_tabla(usuario["correo"])
+    
+    assert usuario_encontrado, f"El usuario {usuario['correo']} no aparece en la tabla"
+        
+    print(f"Usuario de prueba creado: {usuario['correo']}")
 
 except Exception as e:
     print("\n" + "="*50)
@@ -68,6 +95,6 @@ finally:
     print("\nNavegador abierto por 60 segundos para inspección...")
     print(f"URL de registro: {REGISTER_URL}")
     print(f"URL de listado: {LIST_URL}")
-    time.sleep(60)
+    time.sleep(10)
     driver.quit()
     print("Navegador cerrado")
