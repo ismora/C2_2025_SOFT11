@@ -4,15 +4,20 @@
 
 <button onclick="confirmarReserva()">Reservar</button>
 
+<!-- Duplicación de ID "feedback". El atributo id debe ser único. -->
 <div id="feedback"></div>
-<div id="feedback"></div>
+<div id="feedback"></div> <!-- ID duplicado -->
 
 <select id="tipoMesa">
-    <option value="interior">Interior
-    <option value="terraza">Terraza
-    
-<font size="3">Datos de Contacto</font>
+    <!-- Las etiquetas <option> no están cerradas correctamente -->
+    <option value="interior">Interior</option> 
+    <option value="terraza">Terraza</option>
+</select>
+
+<!-- La etiqueta <font> está obsoleta en HTML5. Se recomienda usar CSS. -->
+<font size="3">Datos de Contacto</font> <!--  Obsoleto, usar <p> o <h3> con CSS -->
 
 <input id="telefono" placeholder="Teléfono">
 
-<hr / >
+<!-- Etiqueta <hr / > mal escrita. Hay un espacio extra entre '/' y '>' -->
+<hr /> <!--  Corregido eliminando el espacio -->

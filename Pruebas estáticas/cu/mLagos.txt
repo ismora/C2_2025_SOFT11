@@ -18,3 +18,45 @@ Sistema valida disponibilidad
 
 Sistema verifica que el teléfono sea válido
 
+
+1. "Sistema valida disponibilidad"
+¿Qué significa validar disponibilidad?
+
+¿Disponibilidad de qué? ¿De mesas en general, del tipo de mesa seleccionada, del número de personas?
+
+¿Hay validación por fecha y hora específica?
+
+¿Se permite hacer reservas simultáneas si hay mesas disponibles?
+
+Solución propuesta:
+
+Especificar claramente la lógica de validación:
+
+“El sistema verifica si existe al menos una mesa disponible del tipo seleccionado (interior/terraza) para la fecha, hora y cantidad de personas ingresadas. Si no hay disponibilidad, se sugiere un horario alternativo.”
+
+2. "Tipo de mesa (interior/terraza)"
+¿Qué pasa si no se especifica el tipo de mesa o si hay más tipos en el futuro?
+
+¿Es obligatorio seleccionar uno?
+
+¿El sistema soporta preferencias o múltiples opciones?
+
+Solución propuesta:
+
+Definir comportamiento y flexibilidad:
+
+“El tipo de mesa debe seleccionarse obligatoriamente. Las opciones disponibles son configurables por el administrador del restaurante, permitiendo agregar otros tipos como ‘privada’, ‘VIP’, etc.”
+
+3. "Sistema verifica que el teléfono sea válido"
+¿Qué se considera un teléfono válido?
+
+¿Se requiere formato internacional, validación por país?
+
+¿Debe ser un número activo, o solo cumplir con una estructura?
+
+Solución propuesta:
+
+Detallar los criterios de validación:
+
+“El sistema valida que el número de teléfono contenga únicamente dígitos, tenga una longitud mínima de 8 caracteres, y cumpla con el formato local (ejemplo: para Costa Rica, 8 dígitos iniciando con 6, 7 u 8).”
+
