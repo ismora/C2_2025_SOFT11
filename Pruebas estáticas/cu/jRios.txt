@@ -1,0 +1,27 @@
+Caso de uso: Sistema de reserva de citas médicas
+Actor: Paciente
+Propósito: Reservar una cita médica online
+Precondiciones: Usuario autenticado
+Garantía de éxito: Sistema registra la cita y muestra confirmación
+Garantía de mínimo compromiso: Sistema muestra mensaje de error
+
+Flujo Principal:
+Paciente selecciona "Nueva cita"
+
+Sistema muestra especialidades disponibles
+
+Paciente selecciona especialidad médica
+
+Sistema muestra médicos disponibles y fechas
+
+Paciente selecciona médico y fecha/hora
+
+Paciente ingresa síntomas/reason (campo opcional)
+
+Paciente hace clic en "Confirmar Reserva"
+
+Sistema valida los datos
+
+Sistema registra la cita en calendario
+
+Sistema muestra confirmación con detalles
