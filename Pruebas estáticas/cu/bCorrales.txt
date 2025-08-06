@@ -1,0 +1,23 @@
+Caso de uso: Sistema de gestión de eventos
+Actor: Organizador de eventos
+Propósito: Crear y publicar un nuevo evento
+Precondiciones: Usuario autenticado como organizador
+
+Flujo Principal:
+Organizador selecciona "Crear nuevo evento"
+
+Sistema muestra formulario con campos: Nombre, Fecha, Ubicación, Descripción, Capacidad Máxima
+
+Organizador ingresa datos del evento
+
+Organizador sube una imagen promocional
+
+Organizador hace clic en "Publicar Evento"
+
+Sistema valida los datos
+
+Sistema verifica que no exista un evento con el mismo nombre en la misma fecha
+
+Sistema guarda el evento en la base de datos
+
+Sistema muestra mensaje de confirmación
